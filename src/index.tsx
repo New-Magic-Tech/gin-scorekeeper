@@ -6,13 +6,34 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+import ErrorPage from "./routes/ErrorPage";
+
 const container = document.getElementById('root')!;
 const root = createRoot(container);
+
+const router = createBrowserRouter([
+  {
+    path: "/", //nav bar here, with rest as children
+    element: <App/>,
+    errorElement: <ErrorPage />,
+    children: [
+     /* {
+        path: "/holder",
+        element: <Holder/>,
+      },*/
+    ],
+  },
+]);
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 );
