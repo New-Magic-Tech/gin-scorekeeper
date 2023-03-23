@@ -7,7 +7,7 @@ type Props = {
 export default function Button(props: Props){
     
     return(
-        <button onClick = {props.onClick}>
+        <button className='text-gold bg-darkGreen border-solid rounded-xl border-gold border-4 p-3 m-2 text-xl' onClick = {props.onClick}>
             {props.children}
         </button>
     )

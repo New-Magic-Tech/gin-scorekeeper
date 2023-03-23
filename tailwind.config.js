@@ -10,6 +10,7 @@ module.exports = {
         red: '#FF6059',
         gold: "#FFD626",
         green: "#33FF7C",
+        darkGreen: "#167036",
       }
     },
   },
