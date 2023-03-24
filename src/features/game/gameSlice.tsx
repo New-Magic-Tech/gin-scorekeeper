@@ -15,7 +15,7 @@ interface GameState {
 
 const initialState: GameState = {
   score: [0,0],
-  playerNames: ['Jamie', 'Brian Looney'],
+  playerNames: ['Blue Player', 'Red Player'],
   playAnimation: false,
   gameOver: {
     gameOver: false,
