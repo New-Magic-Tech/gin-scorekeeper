@@ -4,14 +4,35 @@ import Button from "../../components/Button"
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
 import { selectGameOver, selectNames, selectScore, newGame } from "./gameSlice"
+import { selectSignedIn } from "../auth/authSlice"
+
+import { addGameToUser } from "../../utils/firebase"
+import {pushGamesField} from "../auth/authSlice"
+
+import { GameData } from "../../utils/InterfaceModels"
+
 
 export default function GameOver (){
     const winnerIndex = useAppSelector(selectGameOver).winnerIndex
-    const winner = useAppSelector(selectNames)[winnerIndex]
+    const names = useAppSelector(selectNames)
+    const winner = names[winnerIndex]
     const scores = useAppSelector(selectScore)
+
+    const signedIn = useAppSelector(selectSignedIn)
 
     const dispatch = useAppDispatch()
     const handleNewGameClick = () =>{
+        if (signedIn){
+            const gameData:GameData = {
+                winner: winner,
+                player1Name:names[0],
+                player2Name: names[1],
+                player1Score: scores[0].toString(),
+                player2Score: scores[1].toString(),
+            }
+            addGameToUser(gameData)
+            dispatch(pushGamesField({gameData}))
+        }
         dispatch(newGame())
     }
     return (

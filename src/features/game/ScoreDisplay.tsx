@@ -6,7 +6,6 @@ import SuitsFalling from "../animation/SuitsFalling"
 import { useAppSelector } from "../../app/hooks"
 import { RootState } from "../../app/store"
 
-import { useEffect, useState } from "react"
 
 export default function ScoreDisplay(){
   

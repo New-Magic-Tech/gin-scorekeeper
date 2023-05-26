@@ -11,5 +11,5 @@ export default function SuitsFalling () {
       const { View } = useLottie(options);
     
       return (
-      <div className="h-[400px] sm:h-[600px] overflow-hidden absolute mt-[-200px] sm:mt-[-280px]">{View}</div>);
+      <div className="h-[400px] sm:h-[600px] overflow-hidden absolute mt-[-100px] sm:mt-[-140px]">{View}</div>);
 }
