@@ -2,7 +2,7 @@ import "jest-canvas-mock";
 import { render, screen } from '@testing-library/react';
 import Game from './Game';
 import { Provider } from "react-redux";
-import { store } from "../../app/store";
+import { store } from "../app/store";
 
 test('renders heading', () => {
   render(

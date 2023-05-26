@@ -1,12 +1,12 @@
-import Stacked from "../../components/Stacked"
-import Row from "../../components/Row"
-import ScoreInput from "./ScoreInput"
-import ScoreDisplay from "./ScoreDisplay"
-import Section from "../../components/Section"
-import GameOver from "./GameOver"
+import Stacked from "../components/Stacked"
+import Row from "../components/Row"
+import ScoreInput from "../features/game/ScoreInput"
+import ScoreDisplay from "../features/game//ScoreDisplay"
+import Section from "../components/Section"
+import GameOver from "../features/game//GameOver"
 
-import { useAppSelector } from "../../app/hooks"
-import { selectGameOver } from "./gameSlice"
+import { useAppSelector } from "../app/hooks"
+import { selectGameOver } from "../features/game//gameSlice"
 
 export default function Game(){
     const gameOver = useAppSelector(selectGameOver).gameOver

@@ -1,6 +1,7 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import gameReducer from '../features/game/gameSlice';
 import authReducer from '../features/auth/authSlice';
+import { loadState} from './browserStorage';
 
 
 export const store = configureStore({
@@ -8,6 +9,7 @@ export const store = configureStore({
     game: gameReducer,
     auth: authReducer,
   },
+  preloadedState: loadState(),
 });
 
 export type AppDispatch = typeof store.dispatch;
