@@ -1,5 +1,5 @@
 const KEY = "new magic gin scorescorekeeper";
-export function loadState(sliceName) {
+export function loadState() {
   try {
     const serializedState = localStorage.getItem(KEY);
     if (!serializedState) return undefined;
@@ -9,7 +9,7 @@ export function loadState(sliceName) {
   }
 }
 
-export async function saveState(state, sliceName) {
+export async function saveState(state) {
   try {
     const serializedState = JSON.stringify(state);
     localStorage.setItem(KEY, serializedState);
