@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Game/>,
-      },
+  },
       {
         path: '/games', 
         element: <Games/>,
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
       }
     ],
   }
-  ]);
+]);
 
 
 root.render(
